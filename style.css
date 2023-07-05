@@ -1,0 +1,181 @@
+* {
+    padding: 0; /* permet d'avoir des marges à 0 */
+    margin: 0; 
+    box-sizing: border-box; /* permet de changer de modèle de boite */
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: black; /* couleur de l'arrière-plan : permet d'avoir une couleur par défaut */
+    font-family: sans-serif; /* police */
+    
+}
+
+/* header */
+header {
+    position:absolute; /* la div ne prend pas 100% de la taille de son parent par défaut */
+    width: 100%;
+    height: 8vh;
+    top: 0;
+    left: 0;
+    background: black;
+    color: white; /* couleur des éléments */
+    padding: 0 2rem; /* à gauche et à droite */
+}
+
+nav {
+    width: 100%; /* prend 100% de la largeur de son parent */
+    height: 100%; /* prend 100% de la hauteur de son parent */
+    display: flex; /* permet d'avoir les élément les un à coté des autres */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.toggle {
+    display:none; /* cache les boutons ouvrir et fermer en mode desktop */
+}
+
+.menu {
+    display: flex; /* permet de mettre en place le menu */
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 550px;
+}
+
+.menu li a { 
+    border: 2px solid white;
+    background: transparent;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/* main */
+main {
+    background: black;
+}
+img {
+    width: 10%;
+    height: 10%;
+    border-radius: 100%; /* transforme l'image en cercle */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    text-align: center; /* centrer le texte */
+    color: white; /* colorer le texte*/
+    margin-bottom: 20px;
+}
+
+.parcours {
+    color: white; /* couleur du texte */
+    display: flex;
+    flex-wrap: wrap; /* permet de dire aux éléments de la section de se mettre l'un à la suite l'autre quand la taille de l'écran commence à diminuer et à être plus petite qu'un écran d'ordinateur */
+    justify-content: center; /* va permettre aux éléments de se répartir de façon équitable */
+    height: 55%; /* hauteur */
+}
+
+.texte {
+    width: 60%; /* largeur */
+    margin-right: 10px; /* permet de mettre un peu d'espace entre l'image et le texte*/
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.image {
+    float: right; /* permet de faire en sorte que l'image reste à droite */
+}
+
+.code {
+    width: 400px;
+    height: 200px;
+    border-radius: 30px;
+    box-shadow: 5px 5px black;  
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* footer */
+.footer {
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+/* mode Tablet */
+@media all and (max-width: 991px) {
+
+    header {
+        background: transparent;
+    }
+
+    .toggle {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        /* permet d'afficher le bouton qui est caché par le background du menu */
+        position: relative; 
+        z-index: 20;
+    }
+    /*idem pour le logo */
+    .logo {
+        position: relative; 
+        z-index: 20;
+    }
+
+    .ouvrir {
+        display: block; /* quand on arrive sur le site permet d'afficher le bouton ouvrir */
+    }
+
+    .toggle .fermer {
+        display: none; /* quand on arrive sur le site, permet de cacher la croix */
+    }
+
+    .open .ouvrir {
+        display: none;
+    }
+
+    .open .fermer {
+        display: block;
+    }
+
+    .menu {
+        position: absolute; 
+        top: 0; /* sera à 0 du haut et de la gauche */
+        left: 0;
+        width: 100%; /* prendra 100% de la largueur */
+        height: 100vh; /* et 100 unités de mesure de la hauteur */
+        background: black;
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: space-around;
+        transform: translateX(-100%); /* permet de décaler le menu de toute sa largeur vers la gauche */
+        transition: transform 1s; /* effet */
+    }
+
+    .menu li a {
+        font-size: 2rem; /* permet d'adapter la taille des bouton sur mobile */
+    }
+
+    .open .menu {
+        transform: translate(0); /* permet de faire apparaitre le menu */
+    }
+
+}
