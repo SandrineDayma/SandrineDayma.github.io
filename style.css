@@ -64,6 +64,7 @@ nav {
 main {
     background: black;
 }
+
 img {
     width: 10rem;
     height: 10rem;
@@ -95,6 +96,10 @@ h1 {
     margin-right: 10px; /* permet de mettre un peu d'espace entre l'image et le texte*/
     margin-top: 20px;
     margin-left: 10px;
+}
+
+.link {
+    color: white;
 }
 
 .image {
