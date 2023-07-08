@@ -79,7 +79,8 @@ img {
 h1 {
     text-align: center; /* centrer le texte */
     color: white; /* colorer le texte*/
-    margin-bottom: 20px;
+    margin-bottom: 5rem;
+    margin-top: 8rem;
     padding: 0.5rem 1rem;
 }
 
